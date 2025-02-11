@@ -1,18 +1,19 @@
 .bg-index{
-    background: url("/static/img/background.jpg") no-repeat fixed;
-    background-size: 100% auto;
-  }
+  background: url("/static/img/background.jpg") no-repeat fixed;
+  background-size: 100% auto;
+}
+
 .navbar a.nav-link {
   color: #FFFEF6 !important;
 }
 .bg-dark {
-  background-color: #2E2E2E !important;
+  background-color: #003057 !important;
 }
 .ms-footer {
-  background-color: #202020;
+  background-color: #B3A369;
 }
 .ms-footer p {
-  color: #7F7F7F;
+  color: #FFFEF6;
   font-size: 13px;
 }
 .ms-footer a:hover {
@@ -38,3 +39,6 @@ font-size: 13px;
     width: fit-content;
     max-height: 400px;
     }
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
