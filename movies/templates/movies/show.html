@@ -4,12 +4,12 @@
 <div class="p-3">
     <div class="container">
         <div class="row mt-3">
-        <div class="col-md-6 mx-auto mb-3">
-            <h2>{{ template_data.movie.name }}</h2>
-            <hr />
-            <p><b>Description:</b> {{ template_data.movie.description }}</p>
-            <p><b>Price:</b> ${{ template_data.movie.price }}</p>
-            <h2>Reviews</h2>
+            <div class="col-md-6 mx-auto mb-3">
+                <h2>{{ template_data.movie.name }}</h2>
+                <hr />
+                <p><b>Description:</b> {{ template_data.movie.description }}</p>
+                <p><b>Price:</b> ${{ template_data.movie.price }}</p>
+                <h2>Reviews</h2>
                 <hr />
                 <ul class="list-group">
                     {% for review in template_data.reviews %}
@@ -26,7 +26,8 @@
                             href="{% url 'movies.edit_review' template_data.movie.id review.id %}">
                             Edit
                         </a>
-                        <a class="btn btn-danger" href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">Delete
+                        <a class="btn btn-danger"
+                            href="{% url 'movies.delete_review' id=template_data.movie.id review_id=review.id %}">Delete
                         </a>
                         {% endif %}
                     </li>
@@ -60,7 +61,8 @@
                         </div>
                     </div>
                 </div>
-            <p class="card-text">
+                {% endif %}
+                <p class="card-text">
                 <form method="post" action="{% url 'cart.add' id=template_data.movie.id %}">
                     <div class="row">
                         {% csrf_token %}
@@ -78,11 +80,10 @@
                     </div>
                 </form>
                 </p>
-        </div>
-        <div class="col-md-6 mx-auto mb-3 text-center">
-            <img src="{{ template_data.movie.image.url }}"
-            class="rounded img-card-400" />
-        </div>
+            </div>
+            <div class="col-md-6 mx-auto mb-3 text-center">
+                <img src="{{ template_data.movie.image.url }}" class="rounded img-card-400" />
+            </div>
         </div>
     </div>
 </div>
