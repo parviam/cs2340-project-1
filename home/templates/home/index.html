@@ -12,8 +12,38 @@
     <div class="container">
         <div class="row mt-3">
         <div class="col mx-auto text-center mb-3">
-            <h4>Welcome to the best movie store!!</h4>
+            <h4>Don't Know What To Watch? Explore The Trailers Below!</h4>
         </div>
+        </div>
+        <div id="movieCarousel" class="carousel slide">
+            <div class="carousel-inner">
+        
+                <div class="carousel-item active">
+                    <video autoplay muted loop playsinline class="d-block w-100">
+                        <source src="{% static 'video/Opp1.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+        
+                <div class="carousel-item">
+                    <video autoplay muted loop playsinline class="d-block w-100">
+                        <source src="{% static 'video/parasite1.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+        
+                <div class="carousel-item">
+                    <video autoplay muted loop playsinline class="d-block w-100">
+                        <source src="{% static 'video/everything1.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+        
+            </div>
+        
+            <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
         </div>
     </div>
 </div>

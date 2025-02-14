@@ -1,6 +1,15 @@
+.masthead {
+  min-height: 70vh;
+}
+
+.masthead h2, 
+.masthead p {
+  color: black !important;
+}
+
 .bg-index{
-  background: url("/static/img/background.jpg") no-repeat fixed;
-  background-size: 100% auto;
+  background: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExejRuZXozOTA0azB0Y2Ixd2s3cWZkcnU2cm14ZXhnb2N0M3M5ZXpmdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U4k5p9obbDgmRug8aH/giphy.gif") no-repeat fixed;
+  background-size: cover;
 }
 
 .navbar a.nav-link {
@@ -41,4 +50,31 @@ font-size: 13px;
     }
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#movieCarousel {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+.carousel-item video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.carousel-control-prev, 
+.carousel-control-next {
+  width: 5%;
+}
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%;
+  padding: 10px;
+}
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+.carousel-inner {
+  overflow: hidden;
+  border-radius: 10px;
 }
