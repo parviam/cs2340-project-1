@@ -4,6 +4,8 @@ from .forms import CustomUserCreationForm, CustomErrorList
 from django.shortcuts import redirect
 from django.contrib.auth import login as auth_login, authenticate, logout as auth_logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+
 # Create your views here.
 @login_required
 def logout(request):
@@ -40,6 +42,26 @@ def login(request):
     if user is None:
         template_data['error'] = 'The username or password is incorrect.'
         return render(request, 'accounts/login.html',
+        {'template_data': template_data})
+    else:
+        auth_login(request, user)
+        return redirect('home.index')
+def reset(request):
+    template_data = {}
+    template_data['title'] = 'Reset Password'
+    if request.method == 'GET':
+        return render(request, 'accounts/reset.html',
+        {'template_data': template_data})
+    elif request.method == 'POST':
+        if request.POST['pinky-promise'] != "I pinky promise this is my account.":
+            user = None
+        else:
+            user = User.objects.get(username=request.POST['username'])
+            user.set_password(request.POST['password'])
+            user.save()
+    if user is None:
+        template_data['error'] = 'The username is incorrect.'
+        return render(request, 'accounts/reset.html',
         {'template_data': template_data})
     else:
         auth_login(request, user)
